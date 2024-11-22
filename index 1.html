@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validación de formulario</title>
+
     <style>
         table{
             text-align: center;
@@ -38,6 +39,23 @@
             margin: 8px 0;
             margin-right: 10px;
         }
+
+        .invalid { 
+            border-color: red; 
+        }
+
+        #errorEmail {
+            color: red; 
+        }
+
+        #errorDNI {
+            color: red; 
+        }
+
+        #errorFecha {
+            color: red; 
+        }
+
     </style>
 </head>
 <body>
@@ -61,21 +79,26 @@
         <div class="formulario-fila">
             <label for="email">Email</label>
             <input type="email" name="email" id="email"><br>
+            <div id="errorEmail"></div>
         </div>
+
         <div class="formulario-fila">
             <label for="fecha">Fecha</label>
             <input type="fecha" name="fecha" id="fecha"><br>
+            <div id="errorFecha"></div>
         </div>
         <div class="formulario-fila">
             <label for="dni">DNI</label>
             <!--<label>(Separa la parte numérica de la letra con un "-")</label>-->
             <input type="dni" name="dni" id="dni"><br>
+            <div id="errorDNI"></div>
         </div>
         <div class="formulario-fila"></div>
         <div class="formulario-fila">
             <button id="formulario-enviar">Añadir</button>
         </div>
     </form>
+
     <table>
         <thead>
             <th id="nombre">Nombre</th>
@@ -86,10 +109,61 @@
             <th id="dni">DNI</th>
             <th id="dni">Fecha</th>
         </thead>
+
         <tbody id="lista-empleados">
         </tbody>
     </table>
 
     <script src="app.js"></script>
+
+    <script>
+        email.onblur = function() {
+        if (!email.value.includes('@')) {
+            email.classList.add('invalid');
+            errorEmail.innerHTML = 'Por favor introduzca un correo válido.'
+        }
+        };
+    
+        email.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+            this.classList.remove('invalid');
+            errorEmail.innerHTML = "";
+        }
+        };
+
+        /*--------------------------------------------*/
+
+        dni.onblur = function() {
+        if (!dni.value.includes('@')) {
+            dni.classList.add('invalid');
+            errorDNI.innerHTML = 'Por favor introduzca un DNI válido.'
+        }
+        };
+    
+        dni.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+            this.classList.remove('invalid');
+            errorDNI.innerHTML = "";
+        }
+        };
+
+        /*--------------------------------------------*/
+
+        fecha.onblur = function() {
+        if (!fecha.value.includes('@')) {
+            fecha.classList.add('invalid');
+            errorFecha.innerHTML = 'Por favor introduzca una fecha válida.'
+        }
+        };
+    
+        fecha.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+            this.classList.remove('invalid');
+            errorFecha.innerHTML = "";
+        }
+        };
+
+    </script>
+
 </body>
 </html>

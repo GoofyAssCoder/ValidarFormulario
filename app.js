@@ -153,7 +153,7 @@ function validarFormulario() {
     return true;
 }
 
-// Evento para añadir empleado
+// Evento para añadir empleado:
 let boton = document.getElementById("formulario-enviar");
 boton.addEventListener("click", evento => {
     evento.preventDefault();
@@ -175,86 +175,4 @@ boton.addEventListener("click", evento => {
     tabla.appendChild(fila);
 });
 
-/*
-let boton=document.getElementById("formulario-enviar");
-boton.addEventListener('click',evento =>{
-    evento.preventDefault();
-
-    let nombre = document.getElementById('nombre').value;
-    let apellido = document.getElementById('apellido').value;
-    let nacimiento = document.getElementById('nacimiento').value;
-    let sueldo = document.getElementById('sueldo').value;
-    let email = document.getElementById('email').value;
-    let dni = document.getElementById('dni').value;
-    let fecha = document.getElementById('fecha').value;
-
-    if(validarEmail() && comprobarDNI() && comprobarFecha()){
-    //if(validarEmail()){
-
-    let empleado = new Empleado(nombre,apellido,nacimiento,sueldo, email, dni, fecha);
-    empleados.push(empleado);
-
-    let tabla = document.getElementById("lista-empleados");
-    let fila = empleado.render();
-    tabla.appendChild(fila);
-
-    }else if(validarEmail()==false){
-        alert("Error email: No se ha añadido el empleado a la tabla");
-
-    }else if(comprobarDNI()==false){
-        alert("Error DNI: No se ha añadido el empleado a la tabla");
-
-    }else if(comprobarFecha()==false){
-        alert("Error fecha: No se ha añadido el empleado a la tabla");
-
-    }
-})
-
-//Ejercicio: añadir campo email y filtrar el email que nos pase en el formulario:
-function validarEmail(){
-    
-	var campoEmail = document.getElementById('email');
-	
-	var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-
-	if( validEmail.test(campoEmail.value) ){
-		console.log('Email válido :)');
-		return true;
-	}else{
-		alert('El email introducido no es válido');
-		return false;
-	}
-}
-
-function comprobarDNI(){
-
-    var campoDNI = document.getElementById('dni');
-	
-	var DNIvalido = /(^([0-9]{8,8}[A-Z])|^)$/; ///(^([0-9]{8,8}\-[A-Z])|^)$/ (con guión)
-
-	if( DNIvalido.test(campoDNI.value) ){
-		console.log('DNI válido :)');
-		return true;
-	}else{
-		alert('El DNI introducido no es válido');
-		return false;
-	}
-}
-
-function comprobarFecha(){
-
-    var campoFecha = document.getElementById('fecha');
-	
-	var fechaválida = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
-
-	if( fechaválida.test(campoFecha.value) ){
-		console.log('Fecha válida :)');
-		return true;
-	}else{
-		alert('La fecha introducida no es válida (Se admite DD/MM/YYYY o DD-MM-YYYY))');
-		return false;
-	}
-}*/
-
-
-
+//element.setAttribute(attr)
