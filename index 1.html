@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            border: solid;
+            border-collapse:collapse;
+        }
+        td,th{
+            border: solid 3px;
+            padding: 10px;
+            text-align: center;
+            background-color: #e0dcdc;
+        }
+        th:hover{
+            background-color: rgb(105, 103, 100);
+            cursor: pointer;
+        }
+        .formulario{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            width: 320px;
+            margin-bottom: 5%;
+        }
+
+        .formulario-fila{
+            width: auto;
+            text-align: left;
+            margin: 5px;
+        }
+
+        .formulario-fila button{
+            margin: 8px 0;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="get" class="formulario">
+        <div class="formulario-fila">
+            <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="nacimiento">Nacimiento</label>
+            <input type="number" name="nacimiento" id="nacimiento" value="1999"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="sueldo">Sueldo</label>
+            <input type="number" name="sueldo" id="sueldo"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="fecha">Fecha</label>
+            <input type="fecha" name="fecha" id="fecha"><br>
+        </div>
+        <div class="formulario-fila">
+            <label for="dni">DNI</label>
+            <!--<label>(Separa la parte numérica de la letra con un "-")</label>-->
+            <input type="dni" name="dni" id="dni"><br>
+        </div>
+        <div class="formulario-fila"></div>
+        <div class="formulario-fila">
+            <button id="formulario-enviar">Añadir</button>
+        </div>
+    </form>
+    <table>
+        <thead>
+            <th id="nombre">Nombre</th>
+            <th id="apellido">Apellido</th>
+            <th id="nacimiento">Año nacimiento</th>
+            <th id="sueldo">Sueldo</th>
+            <th id="email">Email</th>
+            <th id="dni">DNI</th>
+            <th id="dni">Fecha</th>
+        </thead>
+        <tbody id="lista-empleados">
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
